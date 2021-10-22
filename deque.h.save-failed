@@ -1,0 +1,33 @@
+class deque {
+    class node {
+    public:
+        number value;
+        node* left = nullptr;
+        node* right = nullptr;
+    };
+public:
+    node* rightmost = nullptr;
+    node* leftmost = nullptr;
+
+    int length = 0;
+
+    void PushFront(number n);
+
+    void PushBack(number n);
+
+    number PopFront();
+
+    number PopBack();
+
+    number Front();
+
+    number Back();
+
+    int Size();
+
+    void Clear();
+
+    void BubbleSort();
+
+    void Swap(node* n);
+};
