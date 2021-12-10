@@ -63,6 +63,7 @@ int main(int argc, char* argv[]) {
     char* errors;
     int counter = 0;
     bool errorsrisen = false;
+
     while (fscanf(inputfile, "%d %lf %lf", &type, &first, &second) != EOF) {
         if ((type == 1) && (fabs(second) < 0.00001)) {
             fprintf(errorslog, "A provided fraction has a zero denumenator"

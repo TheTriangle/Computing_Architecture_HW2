@@ -20,13 +20,13 @@ void RunGenerator(int argc, char* argv[]) {
 
     FILE* tests = fopen(filename, "w");
     for (int i = 0; i < amount; i++) {
-        fprintf(tests, "%d %f %f\n", rand() % 3,
-                                      GetRandomDouble(lowerbound, upperbound),
-                                      GetRandomDouble(lowerbound, upperbound));
+        fprintf(tests, "%d\n%d %d\n", rand() % 3 + 1,
+                                      int(GetRandomDouble(lowerbound, upperbound)),
+                                      int(GetRandomDouble(lowerbound, upperbound)));
     }
 
     fclose(tests);
-    printf("Tests generation successful.\nExiting.\n");
+    printf("Tests generation successful2.\nExiting.\n");
 }
 
 
@@ -34,7 +34,7 @@ void GenerateTests(char* filename, double lowerbound, double upperbound, int amo
     FILE* testfile = fopen(filename, "w");
 
     for (int i = 0; i < amount; i++) {
-        fprintf(testfile, "%d %f %f", rand() % 3, GetRandomDouble(lowerbound, upperbound),
-                                                  GetRandomDouble(lowerbound, upperbound));
+        fprintf(testfile, "%d %d %d", rand() % 3 + 1, int(GetRandomDouble(lowerbound, upperbound)),
+                                                  int(GetRandomDouble(lowerbound, upperbound)));
     }
 }
